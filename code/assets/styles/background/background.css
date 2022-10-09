@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=background.css.map */
+#background {
+  width: 100vw;
+  height: 100vh;
+  background: url("../../images/cubeworld.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  z-index: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=background.css.map */
