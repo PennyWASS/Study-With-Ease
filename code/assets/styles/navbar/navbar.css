@@ -1,0 +1,16 @@
+body {
+  color: inherit;
+}
+
+body #navbar {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6d365), to(#fda085));
+  background-image: linear-gradient(180deg, #f6d365 0%, #fda085 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.5em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=navbar.css.map */
