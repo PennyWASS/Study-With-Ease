@@ -1,4 +1,5 @@
 body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -62,8 +63,7 @@ a {
 
 .popup {
   position: absolute;
-  z-index: 999;
-  width: 70vw;
+  width: 30vw;
   height: 50vh;
   left: 50%;
   top: 25vh;
@@ -72,8 +72,40 @@ a {
   background-image: linear-gradient(180deg, #f6d465d5 0%, #fd9f85c5 100%);
   -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.099);
           box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.099);
-  padding: 1em;
+  padding: 0.5em;
   overflow: hidden;
   resize: both;
+}
+
+.popup .popheader {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup .popheader .poptitle {
+  overflow-y: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  display: inline-block;
+}
+
+.popup span {
+  max-width: 100%;
+  resize: unset;
+  overflow: hidden;
+}
+
+.minimized {
+  opacity: 0;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 /*# sourceMappingURL=general.css.map */

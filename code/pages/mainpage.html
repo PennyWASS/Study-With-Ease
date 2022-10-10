@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Studying with ease</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- LINKS -->
     <link rel="stylesheet" href="../assets/styles/background/background.css">
@@ -36,11 +36,22 @@
                 <button onclick="openfolders()" type="button" name="openfolders" id="openfolders"><i class="fa-solid fa-folder"></i></button>
             </div>
         </div>
-        <div id="3dtoggle">
+        <div id="bgsettings">
             <button onclick="toggle3d()" type="button" name="toggle3d" id="toggle3d"><i class="fa-solid fa-cube"></i></button>
         </div>
-        <div class="popup">
-            <button class="popupbutton"><i class="fa-solid fa-x"></i></button>
+        <div id="popups">
+            <div class="popup">
+                <div class="popheader">
+                    <button class="close" onclick="remove(this)"><i class="fa-solid fa-x"></i></button>
+                    <div class="poptitle">
+                        <span class="input" role="textbox" contenteditable>post-it!</span>
+                    </div>
+                    <button class="minimize" onclick="minimize(this)"><i class="fa-solid fa-window-minimize"></i></button>
+                </div>
+                <div class="poptextarea">
+                    <span class="input" role="textbox" contenteditable>(=^･ω･^=)</span>
+                </div>
+            </div>
         </div>
     </div>
 
