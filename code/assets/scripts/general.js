@@ -44,7 +44,7 @@ function movepopup(popup) {
 }
 movepopup("popup")
 
-let popupcounter = 1
+let popupcounter = 0
 let tabcounter = 1
 
 function createpin() {
@@ -62,8 +62,11 @@ function remove(el) {
     var child = el
     var parent = child.parentElement;
     var grandparent = parent.parentElement;
+    let grandparentnumber = grandparent.className;
     grandparent.remove();
-    tabcounter = tabcounter - 1;
+    if ((document.getElementById("toolbar").contains(".icon" + grandparentnumber.replaceAll(".popup"))) == True) {
+        document.querySelector(".icon" + grandparentnumber.replaceAll(".popup"));
+    };
 }
 
 function minimize(el) {
@@ -84,15 +87,6 @@ function deminimize(el) {
     } else {
         document.querySelector(".popup" + (el.className)).classList.remove("minimized");
         el.parentElement.remove();
-    }
-}
-let bg3d = 0;
-
-function toggle3d() {
-    if (bg3d == 0) {
-        document.getElementById("background").innerHTML(' <div class="sketchfab-embed-wrapper"> <iframe title="Smol Ame in an Upcycled Terrarium [HololiveEn]" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewportexecution-while-not-rendered web-share width="1900" height="1080" src="https://sketchfab.com/models/490cecc249d242188fda5ad3160a4b24/embed?camera=0&ui_theme=dark"> </iframe> </div>')
-    } else {
-        document.getElementById("background").style.innerHTML("")
     }
 }
 let bgidx = 3;
