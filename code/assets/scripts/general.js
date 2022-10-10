@@ -48,14 +48,16 @@ let popupcounter = 0
 let tabcounter = 1
 
 function createpin() {
-    popupcounter = popupcounter + 1;
-    const pin = document.createElement("div");
-    pin.classList.add("popup", "popup" + popupcounter);
-    document.getElementById("popups").appendChild(pin);
-    let randomkaomoji = (["(×﹏×)", "(￢_￢;)", "(✿◠‿◠)", "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "ᕕ( ᐛ )ᕗ", "(¬ ¬ )", "( Φ ω Φ )", "U・ᴥ・U", "／(≧ x ≦)＼", "／(˃ᆺ˂)＼", "( ˘ ɜ˘) ♬♪♫", "(^_^♪)", "(ˊ〇ˋ*)", "(`･Θ･´)", "／(^ × ^)＼"])[Math.floor(Math.random() * 14)];
-    document.querySelector(".popup" + popupcounter).innerHTML = ('<div class="popheader"><button class="close" onclick="remove(this)"><i class="fa-solid fa-x"></i></button><div class="poptitle"><span class="input" role="textbox" contenteditable>' + "post-it " + tabcounter + "!" + '</span></div><button class="minimize" onclick="minimize(this)"><i class="fa-solid fa-window-minimize"></i></button></div><div class="poptextarea"><span class="input" role="textbox" contenteditable>' + randomkaomoji + '</span></div>');
-    movepopup("popup" + popupcounter);
-    tabcounter = tabcounter + 1;
+    if (tabcounter < 8) {
+        popupcounter = popupcounter + 1;
+        const pin = document.createElement("div");
+        pin.classList.add("popup", "popup" + popupcounter);
+        document.getElementById("popups").appendChild(pin);
+        let randomkaomoji = (["(×﹏×)", "(￢_￢;)", "(✿◠‿◠)", "(⁄ ⁄•⁄ω⁄•⁄ ⁄)", "ᕕ( ᐛ )ᕗ", "(¬ ¬ )", "( Φ ω Φ )", "U・ᴥ・U", "／(≧ x ≦)＼", "／(˃ᆺ˂)＼", "( ˘ ɜ˘) ♬♪♫", "(^_^♪)", "(ˊ〇ˋ*)", "(`･Θ･´)", "／(^ × ^)＼"])[Math.floor(Math.random() * 14)];
+        document.querySelector(".popup" + popupcounter).innerHTML = ('<div class="popheader"><button class="close" onclick="remove(this)"><i class="fa-solid fa-x"></i></button><div class="poptitle"><span class="input" role="textbox" contenteditable>' + "post-it " + tabcounter + "!" + '</span></div><button class="minimize" onclick="minimize(this)"><i class="fa-solid fa-window-minimize"></i></button></div><div class="poptextarea"><span class="input" role="textbox" contenteditable>' + randomkaomoji + '</span></div>');
+        movepopup("popup" + popupcounter);
+        tabcounter = tabcounter + 1;
+    }
 }
 
 function remove(el) {
@@ -63,6 +65,7 @@ function remove(el) {
     var parent = child.parentElement;
     var grandparent = parent.parentElement;
     let grandparentnumber = grandparent.className;
+    tabcounter = tabcounter - 1
     grandparent.remove();
     if ((document.getElementById("toolbar").contains(".icon" + grandparentnumber.replaceAll(".popup"))) == True) {
         document.querySelector(".icon" + grandparentnumber.replaceAll(".popup"));
