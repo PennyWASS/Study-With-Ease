@@ -89,3 +89,14 @@ a {
     opacity: 0;
     transition: all .2s;
 }
+
+#wallpaperswap {
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
