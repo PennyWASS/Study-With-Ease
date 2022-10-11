@@ -8,11 +8,17 @@ body #navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.5em;
-  width: 99vw;
+  height: 10vh;
+  width: 100vw;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 999;
+}
+
+body #navbar #home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=navbar.css.map */

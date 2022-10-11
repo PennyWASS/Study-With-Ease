@@ -4,12 +4,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Studying with ease</title>
+    <title>Study with ease</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="../assets/icons/unknown.png" type="image/icon type">
     <!-- LINKS -->
     <link rel="stylesheet" href="../assets/styles/background/background.css">
     <link rel="stylesheet" href="../assets/styles/general/general.css">
     <link rel="stylesheet" href="../assets/styles/navbar/navbar.css">
+    <link href="http://fonts.cdnfonts.com/css/brishia-jodie" rel="stylesheet">
 </head>
 
 <body>
@@ -17,45 +19,56 @@
 
     </div>
     <div id="background">
-
+        <div class="sketchfab-embed-wrapper"> <iframe id="bg" title="The Kelp Collector" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered
+                web-share src="https://sketchfab.com/models/69752236169941bb8226af28933e1aa4/embed?ui_theme=dark"> </iframe> </div>
     </div>
     <div id="content">
-        <div id="navbar">
-            <div id="home">
-                <div id="logo">
-
-                </div>
+        <div id="navbar" style="align-items: center;">
+            <div id="home" style="display: flex; align-items:center">
+                <h2 id="logo" style="padding:0.5em;font-family: 'Brishia Jodie', sans-serif;">
+                    Study with ease...
+                </h2>
                 <button><a href="mainpage.html"><i class="fa-solid fa-house"></i></a></button>
                 <button><a href="login.html"><i class="fa-solid fa-user"></i></a></button>
             </div>
             <div id="toolbar">
+                <button onclick="openmusic()" class="musicminimized" type="button" name="musicicon" id="musicicon"><i class="fa-solid fa-music"></i></button>
                 <button onclick="toggledarkmode()" type="button" name="darkmode" id="darkmode"><i class="fa-solid fa-sun"></i></button>
                 <button onclick="createpin()" type="button" name="createpin" id="createpin"><i class="fa-solid fa-thumbtack"></i></button>
-                <button onclick="openclock()" type="button" name="openclock" id="openclock"><i class="fa-solid fa-clock"></i></button>
-                <button onclick="opentodo()" type="button" name="opentodo" id="opentodo"><i class="fa-solid fa-list"></i></button>
-                <button onclick="selectpencil()" type="button" name="selectpencil" id="selectpencil"><i class="fa-solid fa-pencil"></i></button>
-                <button onclick="openfolders()" type="button" name="openfolders" id="openfolders"><i class="fa-solid fa-folder"></i></button>
+                <button onclick="retract()" type="button" name="retract" id="retract"><i class="fa-solid fa-chevron-up"></i></i></button>
+                <button onclick="opentodo()" class="musicminimized" type="button" name="opentodo" id="opentodo"><i class="fa-solid fa-list"></i></button>
+
             </div>
         </div>
-        <div id="bgsettings">
-            <button onclick="toggle3d()" type="button" name="toggle3d" id="toggle3d"><i class="fa-solid fa-cube"></i></button>
-        </div>
+
         <div id="wallpaperswap">
+            <button onclick="detract()" type="button" name="detract" id="detract" class="musicminimized"><i class="fa-solid fa-chevron-down "></i></button>
             <button onclick="prevbg()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button onclick="toggle3d()" type="button" name="toggle3d" id="toggle3d"><i class="fa-solid fa-cube"></i></button>
             <button onclick="nextbg()"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
         <div id="popups">
-            <div class="popup">
+            <div class="popup" id="musicplayer">
                 <div class="popheader">
-                    <button class="close" onclick="remove(this)"><i class="fa-solid fa-x"></i></button>
+                    <i class="fa-solid fa-music"></i>
                     <div class="poptitle">
-                        <span class="input" role="textbox" contenteditable>post-it!</span>
+                        <span>Music Player</span>
                     </div>
-                    <button class="minimize" onclick="minimize(this)"><i class="fa-solid fa-window-minimize"></i></button>
+                    <button class="minimize" onclick="musicminimize()"><i class="fa-solid fa-window-minimize"></i></button>
                 </div>
-                <div class="poptextarea">
-                    <span class="input" role="textbox" contenteditable>(=^･ω･^=)</span>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4CU0kDoxaYKeMtSAwRmDp5?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+            <div class="popuptodo" id="todo">
+                <div class="popheader">
+                    <i class="fa-solid fa-list"></i>
+                    <div class="poptitle">
+                        <span>To do</span>
+                    </div>
+                    <button class="minimize" onclick="(minimizetodo())"><i class="fa-solid fa-window-minimize"></i></button>
                 </div>
+                <button onclick="addtask()"><i class="fa-solid fa-plus"></i></button>
+                <div class="task"><input type="checkbox"><span class="input" role="textbox" contenteditable>Task</span><button onclick="removetask(this)"><i class="fa-solid fa-minus"></i></button></div>
             </div>
         </div>
     </div>

@@ -43,7 +43,7 @@ function movepopup(popup) {
     }
 }
 movepopup("popup")
-
+movepopup("popuptodo")
 let popupcounter = 0
 let tabcounter = 1
 
@@ -92,18 +92,92 @@ function deminimize(el) {
         el.parentElement.remove();
     }
 }
-let bgidx = 3;
+let bgidx = 2;
+let mdltoggle = 0;
 
 function prevbg() {
-    if (bgidx > 2 && bgidx <= 5) {
+    if (bgidx > 2 && bgidx <= 7) {
         bgidx = bgidx - 1
-        document.getElementById("background").style.background = 'url("../assets/images/wallpaper' + bgidx + '.png")'
+        document.getElementById("background").style.background = 'url("../assets/images/wallpaper' + bgidx + '.png")';
+        document.getElementById("background").innerHTML = "";
+        mdltoggle = 0;
     }
 }
 
 function nextbg() {
-    if (bgidx > 1 && bgidx <= 5) {
+    if (bgidx > 1 && bgidx <= 6) {
         bgidx = bgidx + 1
-        document.getElementById("background").style.background = 'url("../assets/images/wallpaper' + bgidx + '.png")'
+        document.getElementById("background").style.background = 'url("../assets/images/wallpaper' + bgidx + '.png")';
+        document.getElementById("background").innerHTML = "";
+        mdltoggle = 0;
     }
+}
+const array3d = [
+    '',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="Cube World" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c54ea3927b854b76b531993daa793f2e/embed?camera=0">"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="The Kelp Collector" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-sharesrc="https://sketchfab.com/models/69752236169941bb8226af28933e1aa4/embed?camera=0">"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="la bagarreuse by Clement Deruyter" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/d3aee3b319ec4ab7bed42f63466fef8b/embed?camera=0">"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="Pixel Canals - Low Poly Game Level" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0e7cd01efb484aff817e3b03425cc080/embed?camera=0">"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="The Look (concept by Avogado6)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/4a34d7e8b3044123ac3ff0c67e9f706d/embed?autostart=1&camera=0&ui_theme=dark"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="Pixel Canals - Low Poly Game Level" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0e7cd01efb484aff817e3b03425cc080/embed?camera=0">"> </iframe> </div>',
+    '<div class="sketchfab-embed-wrapper"> <iframe id="bg" title="Book Cover" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c370f7e06e3c4b55ac35cf48008c77ff/embed"> </iframe> </div>'
+];
+
+function toggle3d() {
+    if (mdltoggle == 0) {
+        document.getElementById("background").innerHTML = array3d[bgidx];
+        mdltoggle = 1;
+    } else {
+        document.getElementById("background").innerHTML = "";
+        mdltoggle = 0;
+    }
+}
+
+function musicminimize() {
+    document.getElementById("musicplayer").classList.add("musicminimized");
+    document.getElementById("musicicon").classList.remove("musicminimized");
+}
+
+function openmusic() {
+    document.getElementById("musicplayer").classList.remove("musicminimized");
+    document.getElementById("musicicon").classList.add("musicminimized");
+}
+
+function retract() {
+    document.getElementById("navbar").classList.add("musicminimized");
+    document.getElementById("detract").classList.remove("musicminimized");
+    document.getElementById("bg").style.marginTop = "0em"
+    document.getElementById("wallpaperswap").style.top = "0em"
+    document.getElementById("bg").style.height = "100vh"
+}
+
+function detract() {
+    document.getElementById("navbar").classList.remove("musicminimized");
+    document.getElementById("detract").classList.add("musicminimized");
+    document.getElementById("wallpaperswap").style.top = "10vh"
+    document.getElementById("bg").style.marginTop = "10vh"
+    document.getElementById("bg").style.height = "90vh"
+}
+
+function opentodo() {
+    document.getElementById("todo").classList.remove("musicminimized");
+    document.getElementById("opentodo").classList.add("musicminimized");
+}
+
+function minimizetodo() {
+    document.getElementById("todo").classList.add("musicminimized");
+    document.getElementById("opentodo").classList.remove("musicminimized");
+}
+let taskcounter = 1
+
+function addtask() {
+    const newtask = document.createElement("div");
+    newtask.classList.add("task");
+    newtask.innerHTML = '<div class="task"><input type="checkbox"><span class="input" role="textbox" contenteditable> Task' + taskcounter + '</span><button onclick="removetask(this)"><i class="fa-solid fa-minus"></i></button></div>';
+    document.getElementById("todo").appendChild(newtask);
+    taskcounter = taskcounter + 1;
+}
+
+function removetask(el) {
+    el.parentElement.remove();
 }

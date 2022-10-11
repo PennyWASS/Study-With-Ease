@@ -36,24 +36,6 @@ a {
     top: 0;
 }
 
-#toggle3d {
-    position: absolute;
-    top: 90vh;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 0;
-    margin: 0.5em;
-    border-radius: 0%;
-    width: 1.5em;
-    height: 1.5em;
-    transition: all 0.2s;
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.311);
-        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.099);
-        border-radius: 50%;
-    }
-}
-
 .popup {
     position: absolute;
     width: 30vw;
@@ -85,6 +67,50 @@ a {
     }
 }
 
+.popuptodo {
+    position: absolute;
+    width: 30vw;
+    height: 50vh;
+    left: 20%;
+    top: 25vh;
+    border-radius: 20px;
+    background-image: linear-gradient(180deg, #f6d465d5 0%, #fd9f85c5 100%);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.099);
+    padding: 0.5em;
+    overflow: hidden;
+    resize: both;
+    .popheader {
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        .poptitle {
+            overflow-y: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 50%;
+            display: inline-block;
+        }
+    }
+    span {
+        max-width: 100%;
+        resize: unset;
+        overflow: hidden;
+    }
+    .task {
+        align-items: center;
+        border-radius: 5px;
+        font-size: 1rem;
+        button {
+            padding: 0;
+            margin: 0;
+            &:hover {
+                padding: 0;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
 .minimized {
     opacity: 0;
     transition: all .2s;
@@ -92,11 +118,27 @@ a {
 
 #wallpaperswap {
     position: absolute;
-    top: 90vh;
+    top: 10vh;
     left: 50%;
-    width: 100vw;
+    width: fit-content;
     transform: translate(-50%);
     padding: 0;
     display: flex;
-    justify-content: space-between;
+    button {
+        background-color: rgba(255, 255, 255, 0.293);
+        border-radius: 50%;
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.musicminimized {
+    height: 0em;
+    width: 0em;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
 }
