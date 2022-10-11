@@ -1,2 +1,6 @@
-# Hackathon2022
- Site focado na concentração dos estudantes, criado para o Hackathon2022
+# Study With Ease
+ Com a correria do dia a dia, fica cada vez mais difícil manter o foco nos estudos e na produtividade. Pensando nisso, criamos o site  ”Studying with ease”, que foca na organização e produtividade. Ele oferece um ambiente virtual que simula uma sala de estudos, com diversos recursos para te ajudar a manter o foco.
+
+ Não há dúvida de que o ambiente em que estudamos influencia o nosso desempenho. Estudos mostram que um ambiente de estudos relaxante e produtivo pode ajudar a melhorar o foco, aumentar a compreensão e até mesmo reduzir o tempo necessário para completar tarefas. No entanto, muitos estudantes não dão importância suficiente para o seu ambiente de estudos.
+
+ Ainda nesse contexto, este website visa conceber um ambiente de aprendizado muito útil para quem quer focar e estudar com mais facilidade. Ele oferece uma variedade de recursos para ajudar os usuários a concentrarem-se no estudo, como um sistema de destaque e anotações, além de uma interface limpa e intuitiva. Outrossim, é um ambiente de aprendizagem virtual que permite criar e personalizar ao seu gosto, oferecendo uma variedade de recursos para ajudar os usuários a alcançarem seus objetivos de aprendizagem.
